@@ -52,7 +52,33 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
-
+    flavorDimensions "default"
+    productFlavors { 
+        production {
+            applicationId "com.example.flavorone.production"
+            versionCode 1
+            versionName "1.0.0"
+            dimension "default"
+            applicationIdSuffix ""
+            manifestPlaceholders = [appName: "Flavor"]
+        }
+        staging {
+            applicationId "com.example.flavorone.staging"
+            versionCode 1
+            versionName "1.0.0"
+            dimension "default"
+            applicationIdSuffix ".stg"
+            manifestPlaceholders = [appName: "[STG] Flavor"]
+        }
+        development {
+            applicationId "com.example.flavorone.development"
+            versionCode 1
+            versionName "1.0.0"
+            dimension "default"
+            applicationIdSuffix ".dev"
+            manifestPlaceholders = [appName: "[DEV] Flavor"]
+        }
+    }
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
